@@ -1,6 +1,8 @@
 var express=require("express");
 var path=require("path");
 const app=express();
+const port=process.env.PORT ||3000;
+//  for hbs and importing other js files 
 const hbs=require("hbs");
 const request=require("request");
 var geocode=require("./utils/geocode.js");
@@ -97,6 +99,6 @@ res.render("404",{
 
 /////////////setting up port 3000///////////////////////////////////////////////
 
-app.listen(3000,()=>{
-    console.log("server has started on port 3000");
+app.listen(port,()=>{
+    console.log("server has started on port "+port);
 });
